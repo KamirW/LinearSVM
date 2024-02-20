@@ -12,7 +12,7 @@ int main() {
     const int linearSize = 8;
 
     // Number of training iterations (notable mentions: 1, 100, 500, 1000, 10000, 100000, 1000000)
-    const int maxIter = 100;
+    const int maxIter = 50;
     int iterCount = 0;
 
     bool displayOverTime = true;                                                                    // Set this to false for an instant result
@@ -139,9 +139,11 @@ int main() {
 
         // Show the display to the user
         cv::imshow("Classified Data :)", display);
-        cv::waitKey();
     
     }
+
+    // Save data to an image
+    cv::imwrite("images/iteration_" + std::to_string(maxIter) + ".png", display);
     
 
     cv::waitKey();                                                                             // Waits for a key to be pressed to disappear
